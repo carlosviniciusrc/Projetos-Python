@@ -1,0 +1,65 @@
+1️⃣ Armazenamento de Tarefas em um Arquivo JSON
+
+O código utiliza um arquivo tarefas.json para armazenar as tarefas de forma persistente. Sempre que o programa é executado, ele carrega as tarefas salvas anteriormente e as modifica conforme necessário.
+
+Função carregar_tarefas(): Lê as tarefas do arquivo JSON e as retorna como uma lista.
+
+Função salvar_tarefas(tarefas): Escreve a lista de tarefas no arquivo JSON para garantir que as alterações sejam mantidas.
+
+
+2️⃣ Funcionalidades do Gerenciador de Tarefas
+O código oferece três funcionalidades principais:
+
+✔ Listar Tarefas
+Função listar_tarefas():
+
+Carrega as tarefas salvas.
+
+Exibe cada tarefa com um número correspondente.
+
+➕ Adicionar uma Nova Tarefa
+Função adicionar_tarefa():
+
+Solicita ao usuário que digite uma nova tarefa.
+
+Adiciona essa tarefa à lista carregada do JSON.
+
+Salva a lista atualizada no JSON.
+
+❌ Remover uma Tarefa
+Função remover_tarefa():
+
+Exibe as tarefas existentes.
+
+Solicita ao usuário o número da tarefa a ser removida.
+
+Remove a tarefa correspondente da lista e salva a atualização no JSON.
+
+3️⃣ Sistema de Menu
+A função menu() mantém o programa rodando até que o usuário escolha sair. Ele exibe um menu de opções e chama a função correspondente com base na escolha do usuário.
+
+"1" → Chama listar_tarefas()
+
+"2" → Chama adicionar_tarefa()
+
+"3" → Chama remover_tarefa()
+
+"4" → Sai do programa
+
+Se o usuário inserir um valor inválido, o programa exibe uma mensagem de erro e solicita uma nova entrada.
+
+
+4️⃣ Tratamento de Erros
+O código inclui algumas verificações para evitar problemas comuns:
+
+Arquivo JSON ausente ou vazio: Se o arquivo tarefas.json não existir ou estiver corrompido, ele cria uma lista vazia.
+
+Entrada inválida ao remover tarefas: Se o usuário inserir um número inválido ou um texto, o programa exibe uma mensagem de erro.
+
+Resumo do Funcionamento
+1️⃣ O programa carrega as tarefas do JSON.
+2️⃣ O usuário pode listar, adicionar ou remover tarefas.
+3️⃣ As mudanças são salvas no JSON.
+4️⃣ O menu permite repetir ações até que o usuário escolha sair.
+
+Quer modificar algo ou adicionar mais funcionalidades? 🚀

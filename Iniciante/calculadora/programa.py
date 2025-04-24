@@ -56,7 +56,7 @@ if __name__ == "__main__":
                 print(f'A multiplicação de {num1} * {num2} = {multi(num1, num2)}')
             elif entrada == 4:
                 if num2 == 0:
-                    print('Erro: Divisão por zero não é permitida.')
+                    print('Erro ❌: Divisão por zero não é permitida.')
                     continue
                 print(f'A divisão de {num1} / {num2} = {divi(num1, num2)}')
 
@@ -66,7 +66,7 @@ if __name__ == "__main__":
                 break
 
         except ValueError:
-            print('Digite apenas valores válidos.')
+            print('Digite apenas valores válidos 😕.')
             input('Pressione Enter para continuar...')
 
 

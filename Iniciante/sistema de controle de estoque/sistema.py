@@ -29,7 +29,7 @@ while True:
     try:
         # Entrada de valores 
         nome_do_produto = input('Qual o seu produto: ').upper()
-        categoria_do_produto = int(input('Qual a categoria do produto (1/2/3): ').strip().lower())
+        categoria_do_produto = int(input('Qual a categoria do produto (1/2/3): '))
         quantidade_atual_no_estoque = int(input('Qual a quantidade atual no estoque: '))
 
 

@@ -1,0 +1,67 @@
+import json
+
+TAREFAS_FILE = "tarefas.json"
+
+def carregar_tarefas():
+    try:
+        with open(TAREFAS_FILE, "r") as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+def salvar_tarefas(tarefas):
+    with open(TAREFAS_FILE, "w") as file:
+        json.dump(tarefas, file, indent=4)
+
+def listar_tarefas():
+    tarefas = carregar_tarefas()
+    if not tarefas:
+        print("Nenhuma tarefa encontrada!")
+    else:
+        for i, tarefa in enumerate(tarefas, start=1):
+            print(f"{i}. {tarefa}")
+
+def adicionar_tarefa():
+    tarefa = input("Digite a nova tarefa: ")
+    tarefas = carregar_tarefas()
+    tarefas.append(tarefa)
+    salvar_tarefas(tarefas)
+    print("Tarefa adicionada com sucesso!")
+
+def remover_tarefa():
+    listar_tarefas()
+    try:
+        indice = int(input("Digite o número da tarefa a ser removida: ")) - 1
+        tarefas = carregar_tarefas()
+        if 0 <= indice < len(tarefas):
+            tarefa_removida = tarefas.pop(indice)
+            salvar_tarefas(tarefas)
+            print(f"Tarefa '{tarefa_removida}' removida com sucesso!")
+        else:
+            print("Índice inválido!")
+    except ValueError:
+        print("Por favor, insira um número válido.")
+
+def menu():
+    while True:
+        print("\nGerenciador de Tarefas")
+        print("1. Listar tarefas")
+        print("2. Adicionar tarefa")
+        print("3. Remover tarefa")
+        print("4. Sair")
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            listar_tarefas()
+        elif opcao == "2":
+            adicionar_tarefa()
+        elif opcao == "3":
+            remover_tarefa()
+        elif opcao == "4":
+            print("Saindo do gerenciador de tarefas...")
+            break
+        else:
+            print("Opção inválida! Escolha novamente.")
+
+if __name__ == "__main__":
+    menu()
